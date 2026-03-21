@@ -1,46 +1,405 @@
-<nav class="navbar">
-    <div class="logo">WealthFlow</div>
-    <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#security">Security</a></li>
-        <li><button class="btn-secondary">Login</button></li>
-        <li><button class="btn-primary">Get Started</button></li>
-    </ul>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
 
-<header class="hero">
-    <div class="hero-content">
-        <h1>Master Your Money, <span class="highlight">Effortlessly.</span></h1>
-        <p>Track every rupee, set smart budgets, and visualize your financial future with our MERN-powered dashboard.</p>
-        <div class="hero-btns">
-            <button class="btn-primary">Start Tracking Free</button>
-            <button class="btn-video">Watch Demo</button>
-        </div>
-    </div>
-    <div class="hero-visual">
-        <div class="mockup-card">
-            <div class="chart-line"></div>
-        </div>
-    </div>
-</header>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WealthFlow — Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Circular+Std:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+</head>
 
-<section id="features" class="features">
-    <h2>Everything you need to grow.</h2>
-    <div class="grid">
-        <div class="card">
-            <i class="icon-wallet"></i>
-            <h3>Expense Tracking</h3>
-            <p>Log transactions in seconds with automated categorization.</p>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <circle cx="11" cy="11" r="10" stroke="#1DB954" stroke-width="2" />
+                    <path d="M6 8.5C9.5 7 14 7.5 16 9" stroke="#1DB954" stroke-width="1.8" stroke-linecap="round" />
+                    <path d="M6.5 11.5C9.5 10.2 13.5 10.5 15.5 12" stroke="#1DB954" stroke-width="1.8"
+                        stroke-linecap="round" />
+                    <path d="M7.5 14.5C10 13.5 13 13.8 14.5 15" stroke="#1DB954" stroke-width="1.8"
+                        stroke-linecap="round" />
+                </svg>
+            </div>
+            <span class="logo-text">WealthFlow</span>
         </div>
-        <div class="card">
-            <i class="icon-chart"></i>
-            <h3>Visual Insights</h3>
-            <p>Interactive charts to see exactly where your money goes.</p>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">MAIN</div>
+            <a href="#" class="nav-item active" data-page="dashboard">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" rx="1" />
+                        <rect x="14" y="3" width="7" height="7" rx="1" />
+                        <rect x="3" y="14" width="7" height="7" rx="1" />
+                        <rect x="14" y="14" width="7" height="7" rx="1" />
+                    </svg>
+                </span>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item" data-page="transactions">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+                    </svg>
+                </span>
+                <span>Transactions</span>
+            </a>
+            <a href="#" class="nav-item" data-page="accounts">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="5" width="20" height="14" rx="2" />
+                        <path d="M2 10h20" />
+                    </svg>
+                </span>
+                <span>Accounts</span>
+            </a>
+
+            <div class="nav-section-label" style="margin-top:28px;">ANALYTICS</div>
+            <a href="#" class="nav-item" data-page="reports">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 20V10M12 20V4M6 20v-6" />
+                    </svg>
+                </span>
+                <span>Reports</span>
+            </a>
+            <a href="#" class="nav-item" data-page="goals">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="6" />
+                        <circle cx="12" cy="12" r="2" />
+                    </svg>
+                </span>
+                <span>Goals</span>
+            </a>
+
+            <div class="nav-section-label" style="margin-top:28px;">OTHER</div>
+            <a href="#" class="nav-item" data-page="settings">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                            d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+                    </svg>
+                </span>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">RS</div>
+                <div class="user-details">
+                    <span class="user-name">Rohan S.</span>
+                    <span class="user-plan">Premium Plan</span>
+                </div>
+                <div class="user-more">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="5" r="1" />
+                        <circle cx="12" cy="12" r="1" />
+                        <circle cx="12" cy="19" r="1" />
+                    </svg>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <i class="icon-lock"></i>
-            <h3>Bank-Grade Security</h3>
-            <p>Your data is encrypted and private. Always.</p>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="nav-btn" id="backBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </button>
+                <button class="nav-btn" id="fwdBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </button>
+                <h1 class="page-title" id="pageTitle">Dashboard</h1>
+            </div>
+            <div class="topbar-right">
+                <button class="icon-btn notif-btn" id="notifBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                    </svg>
+                    <span class="notif-dot"></span>
+                </button>
+                <button class="upgrade-btn">Upgrade</button>
+            </div>
+        </header>
+
+        <!-- PAGE: DASHBOARD -->
+        <div class="page-content" id="page-dashboard">
+
+            <!-- BALANCE HERO -->
+            <section class="balance-hero">
+                <div class="balance-label">Total Account Balance</div>
+                <div class="balance-amount" id="balanceAmt">₹1,50,000</div>
+                <div class="balance-change positive">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                        <polyline points="17 6 23 6 23 12" />
+                    </svg>
+                    +₹12,400 this month
+                </div>
+                <div class="balance-pills">
+                    <div class="pill">
+                        <span class="pill-label">Income</span>
+                        <span class="pill-val income">₹45,000</span>
+                    </div>
+                    <div class="pill-divider"></div>
+                    <div class="pill">
+                        <span class="pill-label">Expenses</span>
+                        <span class="pill-val expense">₹32,600</span>
+                    </div>
+                    <div class="pill-divider"></div>
+                    <div class="pill">
+                        <span class="pill-label">Savings</span>
+                        <span class="pill-val savings">₹12,400</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GRID SECTION -->
+            <div class="dashboard-grid">
+
+                <!-- RECENT TRANSACTIONS -->
+                <section class="card transactions-card">
+                    <div class="card-header">
+                        <span class="card-title">Recent Transactions</span>
+                        <a href="#" class="card-link" data-nav="transactions">See all</a>
+                    </div>
+                    <div class="txn-list" id="txnList">
+                        <!-- Populated by JS -->
+                    </div>
+                </section>
+
+                <!-- SPENDING DONUT -->
+                <section class="card spending-card">
+                    <div class="card-header">
+                        <span class="card-title">Spending by Category</span>
+                        <select class="period-select" id="periodSelect">
+                            <option>This Month</option>
+                            <option>Last Month</option>
+                            <option>Last 3 Months</option>
+                        </select>
+                    </div>
+                    <div class="donut-wrapper">
+                        <canvas id="donutChart" width="200" height="200"></canvas>
+                        <div class="donut-center">
+                            <span class="donut-total">₹32.6K</span>
+                            <span class="donut-sub">spent</span>
+                        </div>
+                    </div>
+                    <div class="legend" id="donutLegend"></div>
+                </section>
+
+                <!-- MONTHLY CHART -->
+                <section class="card chart-card">
+                    <div class="card-header">
+                        <span class="card-title">Financial Overview</span>
+                        <div class="chart-tabs">
+                            <button class="chart-tab active" data-range="6m">6M</button>
+                            <button class="chart-tab" data-range="3m">3M</button>
+                            <button class="chart-tab" data-range="1m">1M</button>
+                        </div>
+                    </div>
+                    <canvas id="lineChart" height="200"></canvas>
+                </section>
+
+                <!-- QUICK ACTIONS -->
+                <section class="card quick-card">
+                    <div class="card-header">
+                        <span class="card-title">Quick Actions</span>
+                    </div>
+                    <div class="quick-grid">
+                        <button class="quick-btn" id="addTxnBtn">
+                            <div class="quick-icon green">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </div>
+                            <span>Add Transaction</span>
+                        </button>
+                        <button class="quick-btn">
+                            <div class="quick-icon blue">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                            </div>
+                            <span>Export Data</span>
+                        </button>
+                        <button class="quick-btn">
+                            <div class="quick-icon orange">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                            </div>
+                            <span>Set Budget</span>
+                        </button>
+                        <button class="quick-btn">
+                            <div class="quick-icon purple">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <line x1="12" y1="1" x2="12" y2="23" />
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                </svg>
+                            </div>
+                            <span>Transfer</span>
+                        </button>
+                    </div>
+                </section>
+
+            </div><!-- /dashboard-grid -->
+        </div><!-- /page-dashboard -->
+
+        <!-- PAGE: TRANSACTIONS -->
+        <div class="page-content hidden" id="page-transactions">
+            <section class="card" style="width:100%;box-sizing:border-box;">
+                <div class="card-header">
+                    <span class="card-title">All Transactions</span>
+                    <button class="upgrade-btn" id="openAddModal">+ Add New</button>
+                </div>
+                <div class="txn-filters">
+                    <input type="text" placeholder="Search transactions..." class="search-input" id="txnSearch" />
+                    <select class="period-select" id="txnFilter">
+                        <option value="all">All</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+                <div class="txn-list full" id="txnListFull"></div>
+            </section>
+        </div>
+
+        <!-- PAGE: ACCOUNTS -->
+        <div class="page-content hidden" id="page-accounts">
+            <div class="dashboard-grid">
+                <section class="card" style="grid-column:span 2;">
+                    <div class="card-header"><span class="card-title">My Accounts</span></div>
+                    <div class="accounts-grid">
+                        <div class="account-card">
+                            <div class="account-bank">HDFC Bank</div>
+                            <div class="account-num">•••• •••• 4521</div>
+                            <div class="account-bal">₹1,20,000</div>
+                            <div class="account-type">Savings</div>
+                        </div>
+                        <div class="account-card alt">
+                            <div class="account-bank">ICICI Bank</div>
+                            <div class="account-num">•••• •••• 8834</div>
+                            <div class="account-bal">₹30,000</div>
+                            <div class="account-type">Current</div>
+                        </div>
+                        <div class="account-card add-acc">
+                            <div class="add-acc-icon">+</div>
+                            <div>Link Account</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- PAGE PLACEHOLDERS (Reports, Goals, Settings) -->
+        <div class="page-content hidden" id="page-reports">
+            <section class="card placeholder-card">
+                <div class="placeholder-icon">📊</div>
+                <h2>Reports</h2>
+                <p>Detailed financial reports coming soon. Connect your Python backend to populate this view.</p>
+            </section>
+        </div>
+        <div class="page-content hidden" id="page-goals">
+            <section class="card placeholder-card">
+                <div class="placeholder-icon">🎯</div>
+                <h2>Goals</h2>
+                <p>Set and track your financial goals. Backend integration ready.</p>
+            </section>
+        </div>
+        <div class="page-content hidden" id="page-settings">
+            <section class="card placeholder-card">
+                <div class="placeholder-icon">⚙️</div>
+                <h2>Settings</h2>
+                <p>Manage your profile, notifications, and app preferences.</p>
+            </section>
+        </div>
+
+    </main><!-- /main-content -->
+
+    <!-- ADD TRANSACTION MODAL -->
+    <div class="modal-overlay hidden" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <span class="modal-title">Add Transaction</span>
+                <button class="modal-close" id="modalClose">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" id="f-desc" placeholder="e.g. Grocery shopping" class="form-input" />
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Amount (₹)</label>
+                        <input type="number" id="f-amount" placeholder="0.00" class="form-input" />
+                    </div>
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select id="f-type" class="form-input">
+                            <option value="expense">Expense</option>
+                            <option value="income">Income</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="f-category" class="form-input">
+                        <option>Food</option>
+                        <option>Transport</option>
+                        <option>Bills</option>
+                        <option>Salary</option>
+                        <option>Rent</option>
+                        <option>Entertainment</option>
+                        <option>Shopping</option>
+                        <option>Savings</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" id="f-date" class="form-input" />
+                </div>
+                <button class="submit-btn" id="submitTxn">Add Transaction</button>
+            </div>
         </div>
     </div>
-</section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- The above script is to Add charts in our project , Chart.js is a java script library to show charts -->
+    <script src="app.js"></script>
+</body>
+
+</html>
